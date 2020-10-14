@@ -1,5 +1,7 @@
 import pygame as pg
 
+WHITE = (200, 200, 200)
+BLACK = (0, 0, 0)
 
 class Grid:
     def __init__(self):
@@ -13,5 +15,5 @@ class Grid:
 
     def draw(self, surface):
         for line in self.gridLines:
-            pg.draw.line(surface, (50, 50, 50), line[0], line[1], 2)
+            pg.draw.line(surface, BLACK, line[0], line[1], 2)
             pg.display.flip()
