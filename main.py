@@ -14,8 +14,6 @@ pg.display.set_caption("TicTacToe")
 clock = pg.time.Clock()
 FPS = 60
 
-
-XO = False
 grid = Grid()
 drawGridData = DrawGridData()
 
@@ -29,9 +27,8 @@ while isRun:
             isRun = False
         if event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1:
-                drawGridData.drawAll(surface, event.pos, 10, 75, XO)
+                drawGridData.drawAll(surface, event.pos, 10, 75)
                 pg.display.flip()
-                XO = not XO
 
 
 

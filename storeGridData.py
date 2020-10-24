@@ -16,17 +16,19 @@ class StoreGridData:
                                  (100, 500),
                                  (300, 500),
                                  (500, 500))
+        self.XO = False
 
-
-    def storeXO(self, XO, midPos, surface, thickness, radius, BLUE = (0, 0, 255), RED = (255, 0, 0)):
+    def storeXO(self, midPos, surface, thickness, radius, BLUE = (0, 0, 255), RED = (255, 0, 0)):
         numberRect = self.countNumberOfRect(midPos)
         if self.defaultGrid[numberRect - 1] == 0:
-            if not XO:
+            if not self.XO:
                 self.defaultGrid[numberRect - 1] = 1
-                print(self.defaultGrid)
             else:
                 self.defaultGrid[numberRect - 1] = 2
-                print(self.defaultGrid)
+            self.XO = not self.XO
+        else:
+            self.XO = not self.XO
+            self.XO = not self.XO
         for i in range(0, 9):
             if self.defaultGrid[i] == 1:
                 drawXO.drawCross(surface, BLUE, self.defaultMidPoints[i], thickness + 10)
